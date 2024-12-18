@@ -148,6 +148,16 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Mobile Design section not found.");
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const customDesignBox = document.getElementById("college");
+    if (customDesignBox) {
+        customDesignBox.addEventListener("click", function() {
+            window.location.href = "projectdetails.html";
+        });
+    } else {
+        console.log("Website Design section not found.");
+    }
+});
 //***service End***//
 //** Blog Read**//
 document.addEventListener("DOMContentLoaded", function() {

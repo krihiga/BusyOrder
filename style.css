@@ -488,7 +488,8 @@ header .bg-color
     height: fit-content;
     border-radius: 10%;
     font-size: small;
-    margin-top: -65px;
+    margin-top: -55px;
+    z-index: 1;
 }
 /*Hero End*/
 /*Service Page Start*/
@@ -500,7 +501,7 @@ header .bg-color
     align-items: center;
     text-align: center;
     height: 10px;
-    margin-top: -356px;
+    margin-top: -496px;
     color: white;
     text-decoration: underline; 
 }
@@ -533,26 +534,29 @@ header .bg-color
     filter: blur(5px); /* Adjust the blur intensity as needed */
     z-index: -1; /* Ensures this is below content */
 }
-.container
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-left: 10px;
-    margin-top: 150px;
+.container {
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows items to wrap */
+    justify-content: center; /* Centers items horizontally */
+    align-items: stretch; /* Makes all flex items equal height */
+    margin: 0 10px; /* Removes unnecessary horizontal offset */
+    margin-top: -100px; /* Vertical spacing adjustment */
+    column-gap: 30px; /* Adds horizontal space between items */
+    row-gap: 30px; /* Adds vertical space between rows */
 }
-.boxes
-{
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 100px;
-    margin-top: 2px;
-    margin-left: 10px;
-    display: flex;
-    text-align: center;
+
+.boxes {
+    display: flex; /* To align content properly within each box */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 220px; /* Fixed width for all boxes */
+    height: 250px; /* Fixed height for uniformity */
+    box-shadow: -1px 0 10px #d88989;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for visibility */
+    text-align: center;
 }
+
 .box
 {
     width: 800px;
@@ -566,10 +570,10 @@ header .bg-color
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 170px;
+    width: 130px;
     height: 140px;
     margin-top: 15px;
-    margin-left: -10px;
+    margin-left: -25px;
     border-radius: 10px;
 }
 h4
@@ -832,7 +836,7 @@ margin-right: 80px;
     align-items: center;
     width: 250px;
     height: 250px;    
-    margin-top: 500px;
+    margin-top: 400px;
     margin-left: 200px;
     float: left;
 }
@@ -844,7 +848,7 @@ margin-right: 80px;
     align-items: center;
     text-align: justify;
     font-size: 18px;
-    margin-top: 460px;
+    margin-top: 360px;
     margin-left: 65px;
     margin-right: 45px;
 }
@@ -1097,4 +1101,35 @@ input, select, textarea, button {
   }
   
 /*Footer Page End*/
+/*PDF Page Start*/
+.pdfcontainer {
+    max-width: 600px;
+    margin-top: 190px;
+    margin-left: 360px;
+}
+.pay-button {
+    width: 90%;
+    margin-left: 60px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
+.pay-button:hover {
+    background-color: #0056b3;
+}
+#pdf-viewer {
+    margin-top: 20px;
+}
+.viewpdf
+{
+    margin-top: -30px;
+    margin-left: 190px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+/*PDF Page End*/

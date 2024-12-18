@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Website Design</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <!--Nav Bar Start-->
+    <nav class="navbar">
+        <a href="home.html">
+            <img id="Logo" class="logo" src="img/busy order.png" alt="logo" >
+        </a>
+    <ul>
+        <li><a href="index.html" id="homehome">Home</a></li>
+        <li><a href="home.html" id="sersec" >Services</a></li>
+        <li><a href="home.html"id="blogsec" >Blog</a></li>
+        <li><a href="home.html"id="contsec" >Contact Us</a></li>
+        <li><a href="home.html"id="aboutsec" >About</a></li>
+    </ul>
+    <div class="profile-section">
+        <div class="profile-display" id="profileDisplay">
+              <!-- <img id="profilePic" src="img/defaultpicture.png" alt="Profile Picture" class="profile-pic">-->
+              <span class="userdisplay" id="usernameDisplay">Username</span>
+        </div>
+    </div>
+    </nav> 
+    <!--Nav Bar End-->
+<br>
+<!-- Project Detail Start -->
+<section>
+    <div class="custom-page">
+        <h2 class="cu-h2">COLLEGE PROJECTS</h2>
+        <img src="img/college.jpg" class="cus-img">
+        <h3 class="cu-h3">"Here you will get your project"  
+
+            We provide well-crafted mini and main project solutions
+            tailored for college students. From innovative ideas to detailed implementation,
+            we ensure projects meet academic standards while fostering creativity and learning. 
+            Perfect for engineering, IT, and computer science students!.</h3>
+    </div>
+</section>
+<section>
+    <div class="pdfcontainer">
+        <h1 class="viewpdf">View PDF Project Title</h1>
+        
+        <!-- Button for PDF 1 -->
+        <button class="pay-button" data-pdf="project/100 AS mini project.pdf" data-amount="10000">
+            Pay to View "AS Mini Project PDF"
+        </button>
+
+        <!-- Button for PDF 2 -->
+        <button class="pay-button" data-pdf="project/100 AS main project.pdf" data-amount="35000">
+            Pay to View "AS Main Project PDF"
+        </button>
+
+        <!-- Button for PDF 3 -->
+        <button class="pay-button" data-pdf="project/100 Eng mini project.pdf" data-amount="30000">
+            Pay to View "Engineering Mini Project PDF"
+        </button>
+
+        <!-- Button for PDF 4 -->
+        <button class="pay-button" data-pdf="project/100 Eng main project.pdf" data-amount="50000">
+            Pay to View "Engineering Main Project PDF"
+        </button>
+
+        <div id="pdf-viewer" style="display: none;">
+            <iframe id="pdf-iframe" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+</section>
+<!-- Project Detail End -->
+<script type="module">
+    // Import the functions you need from the SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyDVIaFaHV5e4fxL6HQeO22_TtaGEtK60CE",
+    authDomain: "busy-order-111094.firebaseapp.com",
+    databaseURL: "https://busy-order-111094-default-rtdb.firebaseio.com",
+    projectId: "busy-order-111094",
+    storageBucket: "busy-order-111094.firebasestorage.app",
+    messagingSenderId: "402345046681",
+    appId: "1:402345046681:web:4def93c2d5c4742b3c7e08",
+    measurementId: "G-3R9FT0HKNM"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+    
+    
+    //username display
+    document.addEventListener('DOMContentLoaded', () => {
+        const username = sessionStorage.getItem("username");
+        if (username) {
+            document.getElementById('usernameDisplay').textContent = username;
+        } else {
+            document.getElementById('usernameDisplay').textContent = "";
+        }
+    });
+    
+    // Load user profile data
+    function loadUserProfile() {
+    const userId = ""; // Replace with logic to get the logged-in user ID
+    
+    db.ref('users/' + userId).once('value').then((snapshot) => {
+    if (snapshot.exists()) {
+        const userData = snapshot.val();
+        usernameDisplayElement.textContent = userData.username || 'User';
+    }
+    }).catch((error) => {
+    console.error("Error fetching user data:", error);
+    });
+    }
+    // Call the function when the page loads
+    window.addEventListener('load', loadUserProfile);
+    /* Profile Picture 
+    window.addEventListener('DOMContentLoaded', () => {
+        const userCreds = JSON.parse(sessionStorage.getItem('user-creds'));
+        const profilePic = document.getElementById('profilePic');
+    
+        if (userCreds && userCreds.profilePic) {
+            profilePic.src = userCreds.profilePic;
+        } else {
+            console.log("No profile picture found in sessionStorage, showing default image.");
+        }
+    });
+    */
+    </script>
+<script>
+    // Attach event listeners to all buttons
+    document.querySelectorAll('.pay-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const pdfFile = button.getAttribute('data-pdf'); // PDF path
+            const amount = button.getAttribute('data-amount'); // Payment amount
+
+            var options = {
+                key: 'rzp_test_mRluxtQjyxITRc', // Replace with your Razorpay Key ID
+                amount: amount, // Amount in paise
+                currency: 'INR',
+                name: 'PDF Viewer',
+                description: `Pay ₹${amount / 100} to access the PDF`,
+                handler: function (response) {
+                    // Payment successful
+                    alert('Payment successful! Transaction ID: ' + response.razorpay_payment_id);
+
+                    // Hide the payment button
+                    button.style.display = 'none';
+
+                    // Show the PDF viewer
+                    document.getElementById('pdf-viewer').style.display = 'block';
+                    document.getElementById('pdf-iframe').src = pdfFile;
+                },
+                theme: {
+                    color: '#007BFF'
+                }
+            };
+
+            var razorpay = new Razorpay(options);
+            razorpay.open();
+        });
+    });
+</script>
+</body>
+</html>
