@@ -1,3 +1,7 @@
+function toggleMenu() {
+    const menu = document.querySelector('.navbar ul');
+    menu.classList.toggle('active');
+}
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll('.navbar ul li a');
 
