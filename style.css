@@ -804,7 +804,6 @@ form {
     flex: 1 1 45%;
     display: flex;
     margin-right: 30px;
-    margin-left: 50px;
     flex-direction: column;
     gap: 15px;
     background-color: white;
@@ -812,7 +811,10 @@ form {
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
-
+.contactform
+{
+    margin-left: 50px;
+}
 form .input {
     width: 100%;
     padding: 10px;
