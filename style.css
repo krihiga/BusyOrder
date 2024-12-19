@@ -150,7 +150,50 @@ input[type="password"] {
     margin-left: -73PX;
     margin-right: 18px;
 }
+/* Mobile (small screens) */
+@media (max-width: 767px) {
+    .signin-container {
+        padding: 20px;
+    }
 
+    .signin-container h2 {
+        font-size: 20px;
+    }
+    .signin-form 
+    {
+        width: 90%;
+    }
+    .signin-form input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .signin-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+/* Tablet (medium screens) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .signin-container {
+        padding: 25px;
+    }
+
+    .signin-container h2 {
+        font-size: 22px;
+    }
+
+    .signin-form input {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+
+    .signin-btn {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+}
 /*Signin End*/
 /*Nav Bar start*/
 /* General Styling */
@@ -1003,241 +1046,396 @@ form .submit:hover {
 
 /*About Page End*/
 /*Custom Page Start*/
-.custom-page
-{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+/* General Styles for Custom Page */
+.custom-page {
     text-align: center;
-    margin-left: -125px;
+    padding: 20px;
+    background-color: #f9f9f9;
 }
-.cu-h2
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 110px;
-    margin-left: 195px;
-    font-size: 34px;
-    text-transform: capitalize;
-}
-.cus-img 
-{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 250px;    
-    margin-top: 400px;
-    margin-left: 200px;
-    float: left;
-}
-.cu-h3
-{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    font-size: 18px;
-    margin-top: 360px;
-    margin-left: 65px;
-    margin-right: 45px;
-}
-.cusec .cu-boxes
-{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    flex-direction: row;
-    margin-top: 300px;
 
+
+/* Styles for Custom Design Page */
+.cusec {
+    padding: 20px;
+    background-color: #fff;
 }
+
 .cucontainer {
     display: flex;
-    flex-wrap: wrap; /* Enables wrapping */
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem ; /* Space between items */
-    margin-top: 50px;
+    gap: 20px;
 }
 
 .cu-boxes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 4px;
-    text-align: center;
-    border-radius: 10px;
-    flex-wrap: wrap;
+    flex: 1 1 calc(20% - 20px); /* Default to 5 items per row */
+    max-width: calc(20% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cu-box {
-    width: 800px;
-    height: 220px;
-    margin: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 10px;
-    box-shadow: -1px 0 10px #d88989;
-    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.cuimg
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 165px;
-    margin-top: 15px;
-    margin-left: -20px;
-    border-radius: 10px;
+.cu-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
-.cu-boxes:hover
-{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
+
+.cuimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+
+    .cu-boxes {
+        flex: 1 1 calc(50% - 10px); /* 2 items per row */
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .cu-boxes {
+        flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .cu-boxes {
+        flex: 1 1 calc(20% - 20px); /* 5 items per row */
+        max-width: calc(20% - 20px);
+    }
+}
+
 /*Custom Page End*/
 /*PDF Page Start*/
-.pdfcontainer {
-    max-width: 600px;
-    margin-top: 190px;
-    margin-left: 360px;
+/* General Styles */
+.custom-page {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
 }
+
+.cu-h2 {
+    font-size: 28px;
+    color: #333;
+    margin-top: 125px;
+}
+
+.cus-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.cu-h3 {
+    font-size: 18px;
+    color: #555;
+    margin-top:-50px;
+    line-height: 1.6;
+    margin-left: 280px;
+    margin-right: 180px;
+    margin-top: 80px;
+}
+
+.pdfcontainer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.viewpdf {
+    font-size: 24px;
+    color: #222;
+    margin-top: 130px;
+}
+
 .pay-button {
-    width: 90%;
-    margin-left: 60px;
-    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
     font-size: 16px;
-    background-color: #007BFF;
-    color: #fff;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
 }
 
 .pay-button:hover {
     background-color: #0056b3;
 }
+
 #pdf-viewer {
     margin-top: 20px;
+    display: none; /* Default hidden */
 }
-.viewpdf
-{
-    margin-top: -30px;
-    margin-left: 190px;
-    margin-right: 60px;
-    margin-bottom: 30px;
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+    .cu-h2 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 115px;
+    }
+    
+    .cus-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    
+    .cu-h3 {
+        font-size: 18px;
+        color: #555;
+        margin-top:120px;
+        line-height: 1.6;
+        margin-left: 30px;
+        margin-right: 20px;
+      
+    }
+
+    .viewpdf {
+        font-size: 20px;
+        margin-top: 80px;
+    }
+
+    .pay-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }
+
+/* Tablet Responsiveness */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cu-h2 {
+        font-size: 26px;
+        margin-top: 550px;
+    }
+
+    .cus-img {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+
+    .cu-h3 {
+        font-size: 17px;
+    }
+
+    .viewpdf {
+        font-size: 22px;
+    }
+
+    .pay-button {
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 1025px) {
+    .cu-h2 {
+        font-size: 30px;
+        
+    }
+
+    .cus-img {
+        max-width: 100%;
+    }
+
+    .cu-h3 {
+        font-size: 18px;
+    }
+
+    .viewpdf {
+        font-size: 24px;
+    }
+
+    .pay-button {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+}
+
 /*PDF Page End*/
  /*Custom Order Start*/
- .cuorderlogo {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+ /* General Styles */
+.cuorderlogo {
     text-align: center;
-    color: rgb(139, 17, 143);
-    padding: 1rem;
-    margin-top: 120px;
-    margin-left: 420px;
-    margin-bottom: 2rem;
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    border-bottom: 2px solid #ddd;
 }
 
 .cuorderlogo h1 {
-    width: 100%;
-    font-size: 2rem;
-}
-main {
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    color: #333;
 }
 
-/* Form Section */
+/* Main Section */
+main {
+    padding: 20px;
+    background-color: #fff;
+}
+
+#order-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #order-form h2 {
-    margin-top: 210px;
     text-align: center;
-    color: #007bff;
-    margin-bottom: 1rem;
-    margin-left: -100px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 #order-form p {
     text-align: center;
+    margin-bottom: 20px;
     color: #555;
-    margin-bottom: 1.5rem;
-    margin-left: -100px;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-left: 150px;
+    gap: 15px;
 }
 
 fieldset {
-    width: 80%;
-    margin-left: -54px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 15px;
 }
 
 legend {
+    font-size: 18px;
+    color: #333;
     font-weight: bold;
-    color: #007bff;
+    margin-bottom: 10px;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
 }
 
-input, select, textarea, button {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+select,
+textarea {
     width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-.cuorderbutton
-{
-    width: 60%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-left: 23px;
-}
-.ppay
-{
-    display: flex;
-    justify-content: center;
-   margin-right: -110px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Payment Details */
+.ppay {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#payButton {
+    background-color: #28a745;
+}
+
+#payButton:hover {
+    background-color: #218838;
+}
 
 #orderNotification {
-        display: none;
-        color: green;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-        margin-left: -200px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    #order-form {
+        padding: 15px;
     }
+
+    fieldset {
+        padding: 10px;
+    }
+
+    legend {
+        font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #order-form {
+        max-width: 600px;
+    }
+
+    legend {
+        font-size: 17px;
+    }
+}
+
 /*Custom Order End*/
 
 /*Form Page Start*/
