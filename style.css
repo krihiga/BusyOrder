@@ -329,48 +329,53 @@ input[type="password"] {
     margin-left: 30px;
     margin-right: 50px;
 }
+/* General styles for the profile section */
 .profile-section {
-    position: relative;
+    position: relative; /* Ensure positioning is relative for absolute positioning of dropdown */
     display: inline-block;
-    cursor: pointer;
 }
 
+/* Profile display area */
+.profile-display {
+    cursor: pointer; /* Makes it clear that this is clickable */
+}
 
+/* Dropdown menu styles */
 .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 160px;
-    z-index: 1;
-    display: none;
-    flex-direction: column;
+    position: absolute; /* Position relative to .profile-section */
+    top: 100%; /* Place it below the profile display */
+    right: 60px; /* Align it to the right of the profile section */
+    background-color: #ffffff; /* Background for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 100; /* Ensure it appears above other elements */
+    display: none; /* Hidden by default */
 }
 
-.dropdown-menu a, .dropdown-menu button {
-    padding: 12px 16px;
-    text-decoration: none;
-    color: black;
-    border: none;
-    background: none;
-    display: block;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
+/* Show the dropdown when active */
+.profile-section:hover .dropdown-menu,
+.profile-display:focus + .dropdown-menu {
+    display: block; /* Display dropdown on hover or focus */
 }
 
-.dropdown-menu a:hover, .dropdown-menu button:hover {
-    background-color: #f1f1f1;
+/* Button styles */
+.butt-signout {
+    width: 100%; /* Full width */
+    padding: 10px 15px; /* Button padding */
+    background-color: #f44336; /* Red background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    text-align: center;
+    font-size: 14px;
 }
 
-.hidden {
-    display: none;
+/* Add hover effect to button */
+.butt-signout:hover {
+    background-color: #d32f2f; /* Darker red */
 }
 
-.profile-section:hover .dropdown-menu {
-    display: flex;
-}
 /* Edit */
 .editpage
 {
