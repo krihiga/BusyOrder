@@ -203,14 +203,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //username display
-    document.addEventListener('DOMContentLoaded', () => {
-            const username = sessionStorage.getItem("username");
-            if (username) {
-                document.getElementById('usernameDisplay').textContent = username;
-            } else {
-                document.getElementById('usernameDisplay').textContent = "";
-            }
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    const username = sessionStorage.getItem("username");  
+    const usernameDisplayElement = document.getElementById('usernameDisplay');
+    if (usernameDisplayElement) {
+        usernameDisplayElement.textContent = username || "Guest"; 
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Your code here
