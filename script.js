@@ -456,3 +456,19 @@ console.log('Form submitted');
     });
 });
 */
+
+
+const apiKey = 'rzp_live_N81a7zaGEG0EZn'; // Replace with your API key
+const apiSecret = 'TzWim3n6KLsHJh27tSYDxzZ5'; // Replace with your Secret key
+const encodedAuth = btoa(`${apiKey}:${apiSecret}`);
+
+fetch('https://api.razorpay.com/v1/payments', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Basic ${encodedAuth}`,
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => console.log(data)) // To check API response in console
+.catch(error => console.error('Error:', error));
