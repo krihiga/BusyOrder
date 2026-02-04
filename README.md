@@ -1,6 +1,6 @@
 **Busy Order**
 
-[![Website](https://img.shields.io/badge/Website-BusyOrder-blue)](https://www.busy-order.com)
+[![Website](https://img.shields.io/badge/Website-BusyOrder-blue)](https://busyorder.co.in)
 
 Busy Order is a platform that offers college student projects, custom designs, web development, and mobile app development services. 
 The website is built using modern web technologies and hosted on Vercel.
@@ -20,11 +20,11 @@ The website is built using modern web technologies and hosted on Vercel.
 
 
 📌 Usage
-Visit [Busy Order](https://www.busy-order.com) to explore the services.
+Visit [Busy Order](https://busyorder.co.in) to explore the services.
 
 📞 Contact
 For inquiries, reach out via:
-- Website: [Busy Order](https://www.busy-order.com)
+- Website: [Busy Order](https://busyorder.co.in)
 - Email: [onlyrithi@gmail.com]
 
 📜 License
