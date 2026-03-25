@@ -3,39 +3,20 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-    <url>
-        <loc>https://www.busy-order.co.in/</loc>
-        <lastmod>2024-12-19T16:13:13+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/index.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/signin.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/termcondition.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/privacy.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/refund.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.busy-order.co.in/login.html</loc>
-        <lastmod>2024-12-19T16:13:14+00:00</lastmod>
-        <priority>0.64</priority>
-    </url>
+     <url>
+    <loc>https://www.busy-order.co.in/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.busy-order.co.in/termcondition.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.busy-order.co.in/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.busy-order.co.in/refund.html</loc>
+  </url>
+
 </urlset>
