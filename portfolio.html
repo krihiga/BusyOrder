@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krithiga | Busy Order – Full-Stack Developer & Designer. Web, App, AI, and Custom Digital Solutions that turn your ideas into real products." />
+  <meta name="keywords" content="web developer, app developer, UI UX designer, college projects, AI projects, freelance developer India, Android developer, blockchain developer" />
+  <meta name="author" content="Krithiga R – Busy Order" />
+  <meta property="og:title" content="Krithiga | Busy Order – Developer & Designer" />
+  <meta property="og:description" content="I build real-world digital products. Web, App, AI & Custom Solutions." />
+  <meta property="og:url" content="https://www.busyorder.co.in/" />
+  <meta property="og:type" content="website" />
+  <title>Krithiga | Busy Order — Full-Stack Developer & Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{
+  --bg:#050a0f;--bg2:#080f17;--card:rgba(255,255,255,.04);--cardh:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);--bh:rgba(0,212,255,.35);
+  --cyan:#00d4ff;--purple:#7c3aed;--gold:#f59e0b;--green:#10b981;
+  --t1:#f0f6fc;--t2:#8b949e;--t3:#484f58;
+  --gc:linear-gradient(135deg,#00d4ff,#0066ff);
+  --r1:8px;--r2:16px;--r3:24px;--r4:32px;
+  --tf:.18s cubic-bezier(.4,0,.2,1);--tm:.35s cubic-bezier(.4,0,.2,1);--ts:.6s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none}
+::selection{background:rgba(0,212,255,.2);color:var(--t1)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:10px}
+
+/* NOISE */
+.noise{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px}
+
+/* CURSOR */
+.cdot,.cring{pointer-events:none;position:fixed;border-radius:50%;z-index:10000;transform:translate(-50%,-50%)}
+.cdot{width:6px;height:6px;background:var(--cyan)}
+.cring{width:32px;height:32px;border:1.5px solid rgba(0,212,255,.5);transition:width var(--tm),height var(--tm)}
+@media(hover:none){.cdot,.cring{display:none}}
+
+/* UTILS */
+.wrap{max-width:1160px;margin-inline:auto;padding-inline:1.5rem}
+.sec{padding-block:7rem}
+.stag{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.2rem}
+.stag::before{content:'';width:20px;height:1px;background:var(--cyan)}
+.sh{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15}
+.sh.c{text-align:center}
+.ssub{font-size:1.05rem;color:var(--t2);text-align:center;margin-top:1rem}
+.acc{background:var(--gc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:var(--gc);color:#050a0f;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;border-radius:100px;transition:transform var(--tf),box-shadow var(--tf),filter var(--tf);position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,212,255,.35);filter:brightness(1.1)}
+.btng{background:transparent;border:1.5px solid var(--border);color:var(--t1)}
+.btng:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.06);box-shadow:none;filter:none}
+.btnl{padding:1rem 2.4rem;font-size:1.05rem}
+.arr{transition:transform var(--tf)}.btn:hover .arr,.btng:hover .arr{transform:translateX(4px)}
+
+/* REVEAL */
+.rv,.rl,.rr{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);transition-delay:var(--d,0s)}
+.rl{transform:translateX(-40px)}.rr{transform:translateX(40px)}
+.iv.rv,.iv.rl,.iv.rr{opacity:1;transform:none}
+
+/* NAVBAR */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 0;transition:background var(--tm),padding var(--tm),box-shadow var(--tm)}
+.nav.sc{background:rgba(5,10,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.8rem 0;box-shadow:0 1px 0 var(--border)}
+.nc{max-width:1160px;margin-inline:auto;padding-inline:1.5rem;display:flex;align-items:center;gap:2rem}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:.2rem;flex-shrink:0}
+.lb{color:var(--cyan);font-weight:400}.la{color:var(--cyan)}
+.nlinks{display:flex;align-items:center;gap:.25rem;margin-left:auto}
+.nl{font-size:.9rem;font-weight:500;color:var(--t2);padding:.45rem .8rem;border-radius:var(--r1);transition:color var(--tf);position:relative}
+.nl::after{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:2px;background:var(--cyan);transition:left var(--tm),right var(--tm);border-radius:4px}
+.nl:hover,.nl.ac{color:var(--t1)}.nl.ac::after,.nl:hover::after{left:.8rem;right:.8rem}
+.ncta{margin-left:1rem;font-size:.88rem;padding:.6rem 1.4rem}
+.hb{display:none;flex-direction:column;gap:5px;margin-left:auto;padding:.5rem}
+.hb span{display:block;width:24px;height:2px;background:var(--t1);border-radius:4px;transition:transform var(--tm),opacity var(--tm)}
+
+/* MOBILE NAV */
+.mob{position:fixed;inset:0;z-index:1100;background:rgba(5,10,15,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;transform:translateX(100%);transition:transform var(--ts)}
+.mob.open{transform:translateX(0)}
+.mclose{position:absolute;top:1.5rem;right:1.5rem;font-size:1.6rem;color:var(--t2);padding:.5rem;transition:color var(--tf)}
+.mclose:hover{color:var(--cyan)}
+.mlinks{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.mlink{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:700;color:var(--t2);transition:color var(--tf)}
+.mlink:hover{color:var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:5rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 70% 30%,rgba(0,212,255,.10) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(124,58,237,.08) 0%,transparent 60%);pointer-events:none}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);animation:forb 8s ease-in-out infinite}
+.o1{width:500px;height:500px;background:rgba(0,212,255,.07);top:-100px;right:-100px;animation-duration:10s}
+.o2{width:350px;height:350px;background:rgba(124,58,237,.09);bottom:0;left:-80px;animation-duration:13s;animation-delay:-4s}
+.o3{width:200px;height:200px;background:rgba(245,158,11,.06);top:40%;right:25%;animation-duration:8s;animation-delay:-2s}
+@keyframes forb{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-25px)}}
+.hcon{position:relative;z-index:2;max-width:760px;padding-inline:1.5rem;margin-left:max(1.5rem,calc((100vw - 1160px)/2))}
+.hbadge{display:inline-flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:.4rem .9rem;border-radius:100px;margin-bottom:1.8rem}
+.bdot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.hh{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem}
+.hhi{background:var(--gc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hs{font-size:1.1rem;color:var(--t2);line-height:1.75;margin-bottom:2.5rem;max-width:580px}
+.hs strong{color:var(--t1)}.hs em{color:var(--cyan);font-style:normal}
+.hcta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.hstats{display:flex;align-items:center;gap:2.5rem}
+.stat{display:flex;flex-direction:column}
+.snum{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--t1);line-height:1}
+.splus{font-size:1.4rem;color:var(--cyan);font-weight:800}
+.slbl{font-size:.8rem;color:var(--t3);margin-top:.3rem;text-transform:uppercase;letter-spacing:.06em}
+.sdiv{width:1px;height:40px;background:var(--border)}
+.ftags{position:absolute;right:max(2rem,calc((100vw - 1160px)/2));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1rem;z-index:2}
+.ft{display:block;font-family:'JetBrains Mono',monospace;font-size:.75rem;padding:.45rem 1rem;border:1px solid var(--border);border-radius:100px;background:var(--card);backdrop-filter:blur(12px);color:var(--t2);animation:ftag linear infinite;white-space:nowrap}
+.f1{animation-duration:6s;animation-delay:0s;--tx:8px}
+.f2{animation-duration:7s;animation-delay:-2s;--tx:-8px}
+.f3{animation-duration:5.5s;animation-delay:-1s;--tx:6px}
+.f4{animation-duration:8s;animation-delay:-3s;--tx:-6px}
+.f5{animation-duration:6.5s;animation-delay:-1.5s;--tx:10px}
+.f6{animation-duration:7.5s;animation-delay:-0.5s;--tx:-10px}
+@keyframes ftag{0%,100%{transform:translate(0,0)}50%{transform:translate(var(--tx),10px)}}
+.sci{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:2}
+.sci span{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase}
+.sline{width:1px;height:50px;background:var(--border);border-radius:4px;overflow:hidden;position:relative}
+.sdot2{position:absolute;top:0;left:0;width:1px;height:16px;background:var(--cyan);animation:sd 1.8s ease-in-out infinite}
+@keyframes sd{0%{top:0;opacity:1}80%{top:100%;opacity:.3}100%{top:100%;opacity:0}}
+
+/* ABOUT */
+.about{background:var(--bg2)}
+.agrid{display:grid;grid-template-columns:400px 1fr;gap:5rem;align-items:center;margin-top:3rem}
+.aph{position:relative;width:320px;height:380px;border-radius:var(--r4);background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(124,58,237,.08));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:visible}
+.api{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.apic{font-size:4rem;background:var(--gc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.apl{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;color:var(--t2)}
+.pr{position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.15);animation:rp 3s ease-in-out infinite}
+.pr1{width:360px;height:360px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:0s}
+.pr2{width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:.8s}
+@keyframes rp{0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(1)}50%{opacity:.1;transform:translate(-50%,-50%) scale(1.03)}}
+.afl{position:absolute;display:flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;padding:.6rem 1rem;border-radius:var(--r2);background:rgba(5,10,15,.85);backdrop-filter:blur(16px);border:1px solid var(--border);color:var(--t2);animation:fb 5s ease-in-out infinite}
+.afl i{color:var(--cyan)}.fl1{top:-1rem;right:-2rem;animation-delay:0s}.fl2{bottom:2rem;left:-2.5rem;animation-delay:-2s}
+@keyframes fb{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ap{color:var(--t2);font-size:1.05rem;line-height:1.8;margin-top:1.5rem}
+.ap strong{color:var(--t1)}.ap em{color:var(--cyan);font-style:normal}
+.sg{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.sp2{display:flex;align-items:center;gap:.45rem;font-size:.85rem;padding:.45rem 1rem;border:1px solid var(--border);border-radius:100px;color:var(--t2);background:var(--card);transition:border-color var(--tf),color var(--tf),background var(--tf)}
+.sp2 i{color:var(--cyan);font-size:.9rem}.sp2:hover{border-color:var(--cyan);color:var(--t1);background:rgba(0,212,255,.06)}
+
+/* SERVICES */
+.services{position:relative}
+.services::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.3}
+.svgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem}
+.svc{position:relative;padding:2rem 1.6rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r3);transition:border-color var(--tm),background var(--tm),transform var(--tm),box-shadow var(--tm);overflow:hidden}
+.svc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.04),transparent);opacity:0;transition:opacity var(--tm)}
+.svc:hover{border-color:var(--bh);background:var(--cardh);transform:translateY(-6px);box-shadow:0 8px 32px rgba(0,0,0,.4),0 0 30px rgba(0,212,255,.08)}
+.svc:hover::before{opacity:1}
+.svc.feat{background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(124,58,237,.07));border-color:rgba(0,212,255,.2)}
+.fbdg{position:absolute;top:1.2rem;right:1.2rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:.25rem .6rem;background:var(--gc);color:var(--bg);border-radius:100px;font-weight:700}
+.siw{position:relative;width:52px;height:52px;margin-bottom:1.5rem}
+.sic{font-size:1.5rem;background:var(--gc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;z-index:1;line-height:52px}
+.sig{position:absolute;inset:-4px;border-radius:50%;background:rgba(0,212,255,.1);filter:blur(8px);opacity:0;transition:opacity var(--tm)}
+.svc:hover .sig{opacity:1}
+.svt{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.8rem}
+.svd{font-size:.92rem;color:var(--t2);line-height:1.7;margin-bottom:1.2rem}
+.svl{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.5rem}
+.svl li{font-size:.85rem;color:var(--t3);padding-left:1rem;position:relative}
+.svl li::before{content:'→';position:absolute;left:0;color:var(--cyan);font-size:.75rem}
+.svtag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);border:1px solid rgba(0,212,255,.25);padding:.3rem .7rem;border-radius:100px}
+
+/* PROJECTS */
+.projects{background:var(--bg2)}
+.ftabs{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-block:2.5rem 3rem}
+.fb{font-family:'JetBrains Mono',monospace;font-size:.8rem;padding:.5rem 1.2rem;border:1px solid var(--border);border-radius:100px;color:var(--t2);background:var(--card);transition:all var(--tf)}
+.fb:hover,.fb.ac{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.08)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);overflow:hidden;transition:border-color var(--tm),transform var(--tm),box-shadow var(--tm)}
+.pc:hover{border-color:var(--bh);transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.pc.hidden{display:none}
+.pt{position:relative;height:160px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ptb{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,hsl(var(--hue),80%,18%) 0%,hsl(var(--hue),40%,8%) 100%);transition:transform var(--ts)}
+.pc:hover .ptb{transform:scale(1.08)}
+.pti{position:relative;z-index:1;font-size:2.8rem;color:rgba(255,255,255,.2);transition:color var(--tm),transform var(--tm)}
+.pc:hover .pti{color:rgba(255,255,255,.4);transform:scale(1.1)}
+.pov{position:absolute;inset:0;background:rgba(5,10,15,.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tm)}
+.pc:hover .pov{opacity:1}
+.pob{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;padding:.6rem 1.4rem;background:var(--gc);color:var(--bg);border-radius:100px;transform:translateY(8px);transition:transform var(--tm)}
+.pc:hover .pob{transform:translateY(0)}
+.pi{padding:1.5rem}
+.pcats{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.pcat{font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:.2rem .6rem;border-radius:100px;background:var(--card);border:1px solid var(--border);color:var(--t3)}
+.cai{border-color:rgba(124,58,237,.4);color:#a78bfa;background:rgba(124,58,237,.08)}
+.cweb{border-color:rgba(0,212,255,.3);color:var(--cyan);background:rgba(0,212,255,.06)}
+.capp{border-color:rgba(245,158,11,.3);color:var(--gold);background:rgba(245,158,11,.06)}
+.clive{border-color:rgba(16,185,129,.3);color:var(--green);background:rgba(16,185,129,.06)}
+.csec{border-color:rgba(239,68,68,.3);color:#f87171;background:rgba(239,68,68,.06)}
+.ptit{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
+.pdesc{font-size:.875rem;color:var(--t2);line-height:1.65;margin-bottom:1rem}
+.pbul{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.pbul li{font-size:.8rem;color:var(--t2);padding-left:.9rem;position:relative;line-height:1.5}
+.pbul li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:.7rem}
+.pstack{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.pstack span{font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:.2rem .55rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r1);color:var(--t3)}
+.plinks{display:flex;flex-wrap:wrap;gap:.6rem}
+.pb{display:inline-flex;align-items:center;gap:.4rem;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;padding:.45rem 1rem;border-radius:100px;background:var(--gc);color:var(--bg);transition:transform var(--tf),box-shadow var(--tf),filter var(--tf)}
+.pb:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,255,.3);filter:brightness(1.08)}
+.pbg{background:transparent;border:1px solid var(--border);color:var(--t2)}
+.pbg:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:none;filter:none}
+
+/* TESTIMONIALS */
+.tswrap{margin-top:3rem;overflow:hidden;cursor:grab;user-select:none}
+.tswrap:active{cursor:grabbing}
+.tstrack{display:flex;gap:1.5rem;transition:transform var(--ts)}
+.tc{min-width:380px;flex-shrink:0;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r3);transition:border-color var(--tf)}
+.tc:hover{border-color:var(--bh)}
+.tst{color:var(--gold);font-size:1rem;letter-spacing:.15em;margin-bottom:1rem}
+.ttxt{font-size:.95rem;color:var(--t2);line-height:1.75;margin-bottom:1.5rem;font-style:italic}
+.tau{display:flex;align-items:center;gap:.9rem}
+.tav{width:44px;height:44px;border-radius:50%;background:var(--gc);color:var(--bg);font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tn{font-weight:600;font-size:.95rem}.tr2{font-size:.8rem;color:var(--t3);margin-top:.1rem}
+.tdots{display:flex;justify-content:center;gap:.6rem;margin-top:2rem}
+.td{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background var(--tf),width var(--tf)}
+.td.ac{background:var(--cyan);width:24px;border-radius:100px}
+
+/* CONTACT */
+.contact{background:var(--bg2)}
+.cgrid{display:grid;grid-template-columns:420px 1fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.ci2{font-size:1rem;color:var(--t2);line-height:1.75;margin-bottom:2rem}
+.cits{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:2rem}
+.cit{display:flex;align-items:flex-start;gap:1rem}
+.ciic{width:42px;height:42px;border-radius:var(--r1);background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:1rem;flex-shrink:0}
+.cilb{font-size:.78rem;color:var(--t3);margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.06em}
+.civl{font-size:.95rem;color:var(--t1);transition:color var(--tf)}
+a.civl:hover{color:var(--cyan)}
+.csoc{display:flex;gap:.8rem;margin-bottom:2rem}
+.csb{width:42px;height:42px;border-radius:var(--r1);border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--t2);font-size:1rem;transition:border-color var(--tf),color var(--tf),background var(--tf)}
+.csb:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.06)}
+.wacta{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff}
+.wacta:hover{box-shadow:0 8px 24px rgba(37,211,102,.3)!important;filter:none!important}
+.cfw{background:var(--card);border:1px solid var(--border);border-radius:var(--r4);padding:2.5rem}
+.cf{display:flex;flex-direction:column;gap:1.2rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.fg label{font-size:.82rem;color:var(--t2);font-weight:500}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r2);padding:.8rem 1rem;color:var(--t1);font-family:'DM Sans',sans-serif;font-size:.95rem;transition:border-color var(--tf),box-shadow var(--tf);outline:none;resize:vertical}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--t3)}
+.fg select option{background:var(--bg2)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,212,255,.1)}
+.ferr{font-size:.78rem;color:#f87171;min-height:1rem}
+.fsub{align-self:flex-start}
+.fok{display:none;align-items:center;gap:.6rem;font-size:.92rem;color:var(--green);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:var(--r2);padding:.9rem 1.2rem}
+.fok.show{display:flex}
+
+/* FOOTER */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding-top:4rem}
+.ftop{display:grid;grid-template-columns:280px repeat(3,1fr);gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.ftagl{font-size:.9rem;color:var(--t3);margin-top:.8rem;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.7rem}
+.fsoc a{width:36px;height:36px;border-radius:var(--r1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:.9rem;transition:border-color var(--tf),color var(--tf)}
+.fsoc a:hover{border-color:var(--cyan);color:var(--cyan)}
+.flc h4{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:1.2rem;color:var(--t2);text-transform:uppercase;letter-spacing:.08em}
+.flc ul{display:flex;flex-direction:column;gap:.7rem}
+.flc a{font-size:.88rem;color:var(--t3);transition:color var(--tf)}.flc a:hover{color:var(--cyan)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-block:1.5rem;font-size:.82rem;color:var(--t3)}
+
+/* BACK TO TOP */
+.btt{position:fixed;bottom:2rem;right:2rem;width:46px;height:46px;border-radius:50%;background:var(--gc);color:var(--bg);font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity var(--tf),transform var(--tf),box-shadow var(--tf);box-shadow:0 0 30px rgba(0,212,255,.18)}
+.btt.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.btt:hover{box-shadow:0 0 20px rgba(0,212,255,.5);transform:translateY(-2px)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .svgrid{grid-template-columns:repeat(2,1fr)}
+  .agrid{grid-template-columns:1fr;gap:3rem}
+  .aph{width:280px;height:320px;margin:0 auto}
+  .avis{text-align:center}.acw{display:inline-block}
+  .fl1{right:-1rem}.fl2{left:-1rem}
+  .ftags{display:none}
+  .cgrid{grid-template-columns:1fr;gap:3rem}
+  .ftop{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .sec{padding-block:5rem}
+  .nlinks,.ncta{display:none}.hb{display:flex}
+  .hcon{margin-left:0;padding-inline:1.5rem}
+  .hh{font-size:clamp(2rem,8vw,3rem)}.hs{font-size:1rem}
+  .hstats{flex-wrap:wrap;gap:1.5rem}.sdiv{display:none}.sci{display:none}
+  .svgrid{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}
+  .tc{min-width:300px}.frow{grid-template-columns:1fr}.cfw{padding:1.8rem}
+  .ftop{grid-template-columns:1fr;gap:2rem}.fbot{flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:480px){
+  .hcta{flex-direction:column}.btnl{text-align:center;justify-content:center}
+  .tc{min-width:280px}.aph{width:240px;height:280px}
+  .pr1{width:280px;height:280px}.pr2{width:330px;height:330px}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cdot" id="cdot"></div>
+<div class="cring" id="cring"></div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <div class="nc">
+    <a href="#home" class="logo"><span class="lb">{</span><span>Busy<span class="la">Order</span></span><span class="lb">}</span></a>
+    <ul class="nlinks">
+      <li><a href="#home"         class="nl ac" data-s="home">Home</a></li>
+      <li><a href="#about"        class="nl"    data-s="about">About</a></li>
+      <li><a href="#services"     class="nl"    data-s="services">Services</a></li>
+      <li><a href="#projects"     class="nl"    data-s="projects">Projects</a></li>
+      <li><a href="#testimonials" class="nl"    data-s="testimonials">Reviews</a></li>
+      <li><a href="#contact"      class="nl"    data-s="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn ncta">Hire Me</a>
+    <button class="hb" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob" id="mob">
+  <button class="mclose" id="mc" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <ul class="mlinks">
+    <li><a href="#home"         class="mlink" data-cl>Home</a></li>
+    <li><a href="#about"        class="mlink" data-cl>About</a></li>
+    <li><a href="#services"     class="mlink" data-cl>Services</a></li>
+    <li><a href="#projects"     class="mlink" data-cl>Projects</a></li>
+    <li><a href="#testimonials" class="mlink" data-cl>Reviews</a></li>
+    <li><a href="#contact"      class="mlink" data-cl>Contact</a></li>
+  </ul>
+  <a href="#contact" class="btn btnl" data-cl>Let's Talk →</a>
+</div>
+
+<main>
+
+<!-- ══════ HERO ══════ -->
+<section class="hero sec" id="home" style="padding-block:0;min-height:100vh">
+  <div class="hgrid"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="hcon">
+    <div class="hbadge rv"><span class="bdot"></span> Available for Freelance Projects</div>
+    <h1 class="hh rv" style="--d:.1s">
+      Your Idea Deserves<br>
+      <span class="hhi">Real Engineering,</span><br>
+      Not Just Templates.
+    </h1>
+    <p class="hs rv" style="--d:.2s">
+      I'm <strong>Krithiga</strong> — Full-Stack Developer &amp; Designer behind <strong>Busy Order</strong>.<br>
+      I build web apps, Android apps, AI-powered systems, and blockchain solutions<br>
+      that <em id="tw">actually work</em> in the real world.
+    </p>
+    <div class="hcta rv" style="--d:.3s">
+      <a href="#projects" class="btn btnl">View My Work <span class="arr">→</span></a>
+      <a href="#contact"  class="btn btng btnl">Hire Me</a>
+    </div>
+    <div class="hstats rv" style="--d:.4s">
+      <div class="stat"><span class="snum" data-t="15">0</span><span class="splus">+</span><span class="slbl">Projects Built</span></div>
+      <div class="sdiv"></div>
+      <div class="stat"><span class="snum" data-t="8">0</span><span class="splus">+</span><span class="slbl">Happy Clients</span></div>
+      <div class="sdiv"></div>
+      <div class="stat"><span class="snum" data-t="2">0</span><span class="splus"></span><span class="slbl">Play Store Apps</span></div>
+    </div>
+  </div>
+  <div class="ftags">
+    <span class="ft f1">Kotlin / Android</span>
+    <span class="ft f2">React.js</span>
+    <span class="ft f3">TensorFlow Lite</span>
+    <span class="ft f4">Node.js</span>
+    <span class="ft f5">AWS Cloud</span>
+    <span class="ft f6">Blockchain / Web3</span>
+  </div>
+  <div class="sci rv" style="--d:.6s">
+    <span>Scroll</span>
+    <div class="sline"><span class="sdot2"></span></div>
+  </div>
+</section>
+
+<!-- ══════ ABOUT ══════ -->
+<section class="about sec" id="about">
+  <div class="wrap">
+    <div class="stag rv">About Me</div>
+    <div class="agrid">
+      <div class="avis rl">
+        <div class="acw">
+          <div class="aph">
+            <div class="api">
+              <i class="fa-solid fa-code apic"></i>
+              <span class="apl">Krithiga R</span>
+            </div>
+            <div class="pr pr1"></div><div class="pr pr2"></div>
+          </div>
+          <div class="afl fl1"><i class="fa-solid fa-brain"></i> AI / ML</div>
+          <div class="afl fl2"><i class="fa-solid fa-bolt"></i> 3+ Yrs Exp</div>
+        </div>
+      </div>
+      <div class="rr">
+        <h2 class="sh">I Don't Just Code —<br><span class="acc">I Engineer Solutions.</span></h2>
+        <p class="ap">I'm <strong>Krithiga</strong>, a passionate full-stack developer and founder of <strong>Busy Order</strong>, a freelance agency based in Trichy, India. I specialise in turning complex real-world problems into clean, deployable digital products.</p>
+        <p class="ap">From AI-powered accessibility tools and biometric security systems to Ethereum blockchain apps and AWS-hosted cloud platforms — everything I build is <em>real, working, and production-ready</em>. If you need it built right, let's talk.</p>
+        <div class="sg">
+          <div class="sp2"><i class="fa-brands fa-android"></i> Android (Kotlin)</div>
+          <div class="sp2"><i class="fa-brands fa-react"></i> React / Next.js</div>
+          <div class="sp2"><i class="fa-brands fa-node-js"></i> Node.js</div>
+          <div class="sp2"><i class="fa-brands fa-python"></i> Python / AI</div>
+          <div class="sp2"><i class="fa-brands fa-aws"></i> AWS Cloud</div>
+          <div class="sp2"><i class="fa-solid fa-link"></i> Blockchain</div>
+          <div class="sp2"><i class="fa-brands fa-figma"></i> UI/UX Design</div>
+          <div class="sp2"><i class="fa-solid fa-fire"></i> Firebase</div>
+        </div>
+        <a href="#contact" class="btn" style="margin-top:2rem">Work With Me <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SERVICES ══════ -->
+<section class="services sec" id="services">
+  <div class="wrap">
+    <div class="stag rv">What I Offer</div>
+    <h2 class="sh c rv">Services Built for<br><span class="acc">Real Results</span></h2>
+    <p class="ssub rv">Every service comes with real engineering, transparent communication, and outcomes you can be proud of.</p>
+    <div class="svgrid">
+      <div class="svc rv" style="--d:.0s">
+        <div class="siw"><i class="fa-solid fa-globe sic"></i><div class="sig"></div></div>
+        <h3 class="svt">Web Development</h3>
+        <p class="svd">Full-stack websites and web apps built with React, Node.js, and AWS — fast, SEO-optimised, and scalable from day one.</p>
+        <ul class="svl"><li>React / Next.js frontends</li><li>Node.js / Express REST APIs</li><li>Database design &amp; integration</li><li>AWS / Vercel deployment</li></ul>
+        <div class="svtag">Starting ₹15,000</div>
+      </div>
+      <div class="svc rv" style="--d:.1s">
+        <div class="siw"><i class="fa-brands fa-android sic"></i><div class="sig"></div></div>
+        <h3 class="svt">App Development</h3>
+        <p class="svd">Native Android apps (Kotlin) with Firebase — from idea to Play Store in weeks. Cross-platform Flutter available too.</p>
+        <ul class="svl"><li>Kotlin (Android native)</li><li>Flutter (iOS + Android)</li><li>Firebase &amp; REST API integration</li><li>Play Store publishing</li></ul>
+        <div class="svtag">Starting ₹20,000</div>
+      </div>
+      <div class="svc feat rv" style="--d:.2s">
+        <div class="fbdg">Most Popular</div>
+        <div class="siw"><i class="fa-brands fa-figma sic"></i><div class="sig"></div></div>
+        <h3 class="svt">Custom Design</h3>
+        <p class="svd">UI/UX design that converts visitors into customers — premium aesthetics grounded in real user psychology.</p>
+        <ul class="svl"><li>Figma prototypes &amp; wireframes</li><li>Brand identity design</li><li>Responsive UI systems</li><li>Design-to-code handoff</li></ul>
+        <div class="svtag">Starting ₹7,000</div>
+      </div>
+      <div class="svc rv" style="--d:.3s">
+        <div class="siw"><i class="fa-solid fa-graduation-cap sic"></i><div class="sig"></div></div>
+        <h3 class="svt">College Projects</h3>
+        <p class="svd">Technically deep, review-ready academic projects — especially AI/ML, security, and blockchain. Stand out in your viva.</p>
+        <ul class="svl"><li>AI / Deep Learning projects</li><li>Blockchain applications</li><li>Security &amp; biometric systems</li><li>Full documentation included</li></ul>
+        <div class="svtag">Starting ₹5,000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROJECTS ══════ -->
+<section class="projects sec" id="projects">
+  <div class="wrap">
+    <div class="stag rv">Portfolio</div>
+    <h2 class="sh c rv">Projects That<br><span class="acc">Push Boundaries</span></h2>
+    <div class="ftabs rv">
+      <button class="fb ac" data-f="all">All</button>
+      <button class="fb" data-f="ai">AI / ML</button>
+      <button class="fb" data-f="sec">Security</button>
+      <button class="fb" data-f="web">Web / Cloud</button>
+      <button class="fb" data-f="app">Android Apps</button>
+      <button class="fb" data-f="live">Live Sites</button>
+    </div>
+    <div class="pgrid" id="pgrid">
+
+      <!-- AI/ML PROJECTS -->
+      <div class="pc rv" data-cat="ai" style="--d:.00s">
+        <div class="pt"><div class="ptb" style="--hue:340"></div><div class="pti"><i class="fa-solid fa-microscope"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat cai">AI / ML</span><span class="pcat">Healthcare</span><span class="pcat">Android</span></div>
+          <h3 class="ptit">Skin Cancer Detection Mobile App</h3>
+          <ul class="pbul">
+            <li>CNN-based model with TensorFlow Lite for on-device skin lesion classification — fast, offline predictions on Android.</li>
+            <li>End-to-end image pipeline: camera/gallery → OpenCV preprocessing → real-time inference with confidence scoring.</li>
+            <li>Firebase integration for scan history storage with clean UI for result tracking.</li>
+          </ul>
+          <div class="pstack"><span>Python</span><span>TensorFlow Lite</span><span>OpenCV</span><span>Android (Java/XML)</span><span>Firebase</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/skincancerapp" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="ai" style="--d:.05s">
+        <div class="pt"><div class="ptb" style="--hue:200"></div><div class="pti"><i class="fa-solid fa-microphone-lines"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat cai">AI / Voice</span><span class="pcat">Accessibility</span><span class="pcat">Android</span></div>
+          <h3 class="ptit">AI Voice Navigation — Visually Impaired</h3>
+          <ul class="pbul">
+            <li>Android voice navigation system with hands-free destination search and audio-guided routing via speech-to-text + Google Maps API.</li>
+            <li>AI-based object detection via camera with real-time voice feedback for environmental awareness.</li>
+            <li>Low-latency pipeline combining speech recognition, navigation, and TTS for seamless real-time assistance.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin</span><span>Speech Recognition API</span><span>Google Maps API</span><span>TensorFlow Lite</span><span>Firebase</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/AI-Voice-Controlled-Navigation-System" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="ai" style="--d:.10s">
+        <div class="pt"><div class="ptb" style="--hue:160"></div><div class="pti"><i class="fa-solid fa-hands"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat cai">Deep Learning</span><span class="pcat">Accessibility</span><span class="pcat">Android</span></div>
+          <h3 class="ptit">Sign Language Recognition &amp; Learning App</h3>
+          <ul class="pbul">
+            <li>Real-time sign language recognition and interactive learning using MediaPipe hand tracking + on-device ML.</li>
+            <li>Gesture pipeline: camera → landmark extraction → model inference with instant text/audio feedback.</li>
+            <li>Firebase Auth + Realtime Database to track learning progress and store gesture history per user.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin</span><span>TensorFlow Lite</span><span>MediaPipe</span><span>OpenCV</span><span>Firebase</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/signapp" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECURITY / BLOCKCHAIN -->
+      <div class="pc rv" data-cat="sec" style="--d:.00s">
+        <div class="pt"><div class="ptb" style="--hue:270"></div><div class="pti"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat csec">Security</span><span class="pcat">Face AI</span><span class="pcat">Web App</span></div>
+          <h3 class="ptit">Secure Voting System — Face Verification</h3>
+          <ul class="pbul">
+            <li>Secure web-based voting platform with face recognition voter authentication — prevents unauthorised access and duplicate votes.</li>
+            <li>Tamper-resistant vote recording using blockchain-inspired data structures ensuring integrity and transparency.</li>
+            <li>End-to-end workflow: authentication → vote casting → result tracking, with admin and voter interfaces.</li>
+          </ul>
+          <div class="pstack"><span>Python (Flask)</span><span>OpenCV</span><span>Node.js</span><span>MongoDB</span><span>MySQL</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/SecureVotingSystem" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="sec" style="--d:.05s">
+        <div class="pt"><div class="ptb" style="--hue:300"></div><div class="pti"><i class="fa-solid fa-certificate"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat csec">Blockchain</span><span class="pcat">Web3</span><span class="pcat">EdTech</span></div>
+          <h3 class="ptit">Certificate Validation — Ethereum Blockchain</h3>
+          <ul class="pbul">
+            <li>Smart contracts store and validate tamper-proof certificate hashes on the Ethereum network.</li>
+            <li>React.js + Web3.js + MetaMask interface for institutions to issue and anyone to verify certificates instantly.</li>
+            <li>Decentralised — eliminates central databases and removes manual validation effort entirely.</li>
+          </ul>
+          <div class="pstack"><span>Solidity</span><span>Ethereum</span><span>Web3.js</span><span>React.js</span><span>MetaMask</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/student-cert-blockchain" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="sec" style="--d:.10s">
+        <div class="pt"><div class="ptb" style="--hue:10"></div><div class="pti"><i class="fa-solid fa-fingerprint"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat csec">Biometrics</span><span class="pcat">Security</span><span class="pcat">Android</span></div>
+          <h3 class="ptit">Biometric Secure File Storage</h3>
+          <ul class="pbul">
+            <li>Secure Android vault with fingerprint biometric authentication to restrict access to sensitive files.</li>
+            <li>Encrypted file storage and secure handling via Firebase for reliable cloud storage and retrieval.</li>
+            <li>File management (upload, view, organise) within a protected environment ensuring privacy and controlled access.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin / Java</span><span>Android</span><span>Firebase</span><span>Biometric Auth API</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/securevault" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEB / CLOUD -->
+      <div class="pc rv" data-cat="web" style="--d:.00s">
+        <div class="pt"><div class="ptb" style="--hue:180"></div><div class="pti"><i class="fa-solid fa-vr-cardboard"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat cweb">WebAR</span><span class="pcat">EdTech</span><span class="pcat">Real-time</span></div>
+          <h3 class="ptit">Virtual Classroom — WebAR</h3>
+          <ul class="pbul">
+            <li>Browser-based virtual classroom using A-Frame + AR.js — interactive 3D learning without any app install.</li>
+            <li>Real-time features (chat, sessions, collaboration) powered by Node.js + Socket.io for live interaction.</li>
+            <li>3D models, quizzes, and Firebase session management for a seamless classroom experience.</li>
+          </ul>
+          <div class="pstack"><span>A-Frame</span><span>AR.js</span><span>Three.js</span><span>JavaScript</span><span>Node.js</span><span>Socket.io</span><span>Firebase</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Live Demo</a>
+            <a href="https://github.com/busyorder/virtual-classroom-webar" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="web" style="--d:.05s">
+        <div class="pt"><div class="ptb" style="--hue:210"></div><div class="pti"><i class="fa-brands fa-aws"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat cweb">Cloud</span><span class="pcat">AWS</span><span class="pcat">EdTech</span></div>
+          <h3 class="ptit">Cloud-Based LMS — AWS</h3>
+          <ul class="pbul">
+            <li>Full-stack LMS with course management, video delivery, quizzes, and progress tracking on AWS infrastructure.</li>
+            <li>JWT-based auth with RBAC for students, instructors, and admins.</li>
+            <li>AWS S3 (storage), CloudFront (CDN delivery), EC2 (hosting), RDS (MySQL) — fully scalable and production-ready.</li>
+          </ul>
+          <div class="pstack"><span>React.js</span><span>Node.js</span><span>AWS EC2</span><span>S3</span><span>CloudFront</span><span>RDS / MySQL</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Live Demo</a>
+            <a href="https://github.com/busyorder/Cloud_LMS_Project" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANDROID APPS -->
+      <div class="pc rv" data-cat="app" style="--d:.00s">
+        <div class="pt"><div class="ptb" style="--hue:230"></div><div class="pti"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="pov"><a href="#contact" class="pob">Get This Built</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat capp">Android</span><span class="pcat">EdTech</span></div>
+          <h3 class="ptit">College Event Management App</h3>
+          <ul class="pbul">
+            <li>Mobile app for college event management — event registration, scheduling, and notification-based reminders.</li>
+            <li>Multi-screen UI: login, event browsing, participation tracking, and feedback collection.</li>
+            <li>Backend logic for event management, alerts, and data storage to streamline student-admin coordination.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin / Java</span><span>Android</span><span>XML</span><span>Firebase</span></div>
+          <div class="plinks">
+            <a href="#contact" class="pb">Request Demo</a>
+            <a href="https://github.com/busyorder/college_event_manager" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="app" style="--d:.05s">
+        <div class="pt"><div class="ptb" style="--hue:80"></div><div class="pti"><i class="fa-solid fa-list-check"></i></div>
+          <div class="pov"><a href="https://play.google.com/store" target="_blank" rel="noopener" class="pob">Play Store</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat capp">Play Store</span><span class="pcat">Productivity</span></div>
+          <h3 class="ptit">Daily To-Do Planner</h3>
+          <ul class="pbul">
+            <li>Productivity Android app for task management, reminders, note-taking, and daily activity planning.</li>
+            <li>Task scheduling, calendar organisation, notification reminders, and analytics tracking.</li>
+            <li>Material UI with Firebase for secure cloud sync, backup, and real-time data management.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin</span><span>Firebase</span><span>Android Studio</span><span>XML</span><span>Notification Manager</span></div>
+          <div class="plinks">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener" class="pb"><i class="fa-brands fa-google-play"></i> Play Store</a>
+            <a href="https://github.com/busyorder" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="app" style="--d:.10s">
+        <div class="pt"><div class="ptb" style="--hue:40"></div><div class="pti"><i class="fa-solid fa-wallet"></i></div>
+          <div class="pov"><a href="https://play.google.com/store" target="_blank" rel="noopener" class="pob">Play Store</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat capp">Play Store</span><span class="pcat">Finance</span></div>
+          <h3 class="ptit">Track Your Expenses — Finance Manager</h3>
+          <ul class="pbul">
+            <li>Published Android app for daily budgeting, income/expense management, and financial analytics.</li>
+            <li>Expense categorisation, recurring transactions, dashboard insights, and visual spending charts via MPAndroidChart.</li>
+            <li>Firebase for cloud backup, real-time sync, and secure user data management with Material UI.</li>
+          </ul>
+          <div class="pstack"><span>Kotlin</span><span>Firebase</span><span>Android SDK</span><span>XML</span><span>MPAndroidChart</span></div>
+          <div class="plinks">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener" class="pb"><i class="fa-brands fa-google-play"></i> Play Store</a>
+            <a href="https://github.com/busyorder" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE SITES -->
+      <div class="pc rv" data-cat="live" style="--d:.00s">
+        <div class="pt"><div class="ptb" style="--hue:120"></div><div class="pti"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <div class="pov"><a href="https://abisharan.in/" target="_blank" rel="noopener" class="pob">Visit Live Site</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat clive">Live</span><span class="pcat">Client Project</span><span class="pcat">Portfolio</span></div>
+          <h3 class="ptit">abisharan.in — Client Website</h3>
+          <ul class="pbul">
+            <li>Responsive client website built with WordPress and custom layouts — mobile-first design throughout.</li>
+            <li>Customised themes and UI components with HTML/CSS for a smooth, user-friendly experience.</li>
+            <li>Responsive animations and optimised layout for cross-device compatibility.</li>
+          </ul>
+          <div class="pstack"><span>WordPress</span><span>Elementor</span><span>HTML5</span><span>CSS3</span><span>Responsive Design</span></div>
+          <div class="plinks">
+            <a href="https://abisharan.in/" target="_blank" rel="noopener" class="pb"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc rv" data-cat="live" style="--d:.05s">
+        <div class="pt"><div class="ptb" style="--hue:50"></div><div class="pti"><i class="fa-solid fa-store"></i></div>
+          <div class="pov"><a href="https://www.busyorder.co.in/" target="_blank" rel="noopener" class="pob">Visit Live Site</a></div></div>
+        <div class="pi">
+          <div class="pcats"><span class="pcat clive">Live</span><span class="pcat">Agency</span><span class="pcat">Brand</span></div>
+          <h3 class="ptit">busyorder.co.in — Official Agency Website</h3>
+          <ul class="pbul">
+            <li>Live business platform offering web, app, UI/UX, and custom digital solutions — designed and built by me.</li>
+            <li>Responsive frontend, production-ready architecture, and Firebase + cloud service integrations.</li>
+            <li>Built to convert visitors into clients — my own real-world example of the work I deliver.</li>
+          </ul>
+          <div class="pstack"><span>React.js</span><span>Node.js</span><span>Firebase</span><span>CSS3</span></div>
+          <div class="plinks">
+            <a href="https://www.busyorder.co.in/" target="_blank" rel="noopener" class="pb"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site</a>
+            <a href="https://github.com/busyorder" target="_blank" rel="noopener" class="pb pbg"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pgrid -->
+  </div>
+</section>
+
+<!-- ══════ TESTIMONIALS ══════ -->
+<section class="sec" id="testimonials" style="overflow:hidden">
+  <div class="wrap">
+    <div class="stag rv">Client Reviews</div>
+    <h2 class="sh c rv">What Clients<br><span class="acc">Say About Me</span></h2>
+    <div class="tswrap">
+      <div class="tstrack" id="tst">
+        <div class="tc"><div class="tst">★★★★★</div><p class="ttxt">"Krithiga delivered our e-commerce website in half the expected time — and it looked better than anything we could have imagined. Communication was top-notch throughout. Will hire again."</p><div class="tau"><div class="tav">RK</div><div><div class="tn">Rahul K.</div><div class="tr2">Founder, RetailEdge Stores</div></div></div></div>
+        <div class="tc"><div class="tst">★★★★★</div><p class="ttxt">"The AI sign language recognition app she built for our college fest won best project. The depth of technical work was genuinely impressive. Highly recommended for any AI project."</p><div class="tau"><div class="tav">PS</div><div><div class="tn">Priya S.</div><div class="tr2">Final Year Student, Anna University</div></div></div></div>
+        <div class="tc"><div class="tst">★★★★★</div><p class="ttxt">"Got our Android app built and live on the Play Store within 3 weeks. Krithiga handled everything — design, development, Play Store submission. Exactly what a busy startup needs."</p><div class="tau"><div class="tav">AV</div><div><div class="tn">Arun V.</div><div class="tr2">Co-founder, Taskly App</div></div></div></div>
+        <div class="tc"><div class="tst">★★★★★</div><p class="ttxt">"The blockchain certificate system she built for our department is now used every semester. Clean code, well-documented, intuitive interface. Worth every rupee."</p><div class="tau"><div class="tav">SM</div><div><div class="tn">Dr. S. Malar</div><div class="tr2">HOD, CSE Department</div></div></div></div>
+        <div class="tc"><div class="tst">★★★★★</div><p class="ttxt">"I needed a personal portfolio fast — Krithiga absolutely delivered. Modern design, smooth animations, and my clients immediately started noticing. Best investment this year."</p><div class="tau"><div class="tav">KJ</div><div><div class="tn">Karthik J.</div><div class="tr2">Freelance Photographer</div></div></div></div>
+      </div>
+    </div>
+    <div class="tdots" id="tdots">
+      <button class="td ac" data-i="0"></button><button class="td" data-i="1"></button>
+      <button class="td" data-i="2"></button><button class="td" data-i="3"></button><button class="td" data-i="4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CONTACT ══════ -->
+<section class="contact sec" id="contact">
+  <div class="wrap">
+    <div class="stag rv">Get In Touch</div>
+    <h2 class="sh c rv">Let's Build Something<br><span class="acc">Great Together</span></h2>
+    <div class="cgrid">
+      <div class="rl">
+        <p class="ci2">Have a project in mind? A college deadline coming up? Or just want to chat? I respond within 24 hours — let's make something real.</p>
+        <div class="cits">
+          <div class="cit"><div class="ciic"><i class="fa-solid fa-envelope"></i></div><div><div class="cilb">Email</div><a href="mailto:onlyrithi@gmail.com" class="civl">onlyrithi@gmail.com</a></div></div>
+          <div class="cit"><div class="ciic"><i class="fa-brands fa-whatsapp"></i></div><div><div class="cilb">WhatsApp</div><a href="https://wa.me/918610597402" target="_blank" rel="noopener" class="civl">+91 86105 97402</a></div></div>
+          <div class="cit"><div class="ciic"><i class="fa-solid fa-globe"></i></div><div><div class="cilb">Website</div><a href="https://www.busyorder.co.in" target="_blank" rel="noopener" class="civl">busyorder.co.in</a></div></div>
+          <div class="cit"><div class="ciic"><i class="fa-solid fa-location-dot"></i></div><div><div class="cilb">Location</div><span class="civl">Trichy, Tamil Nadu</span></div></div>
+        </div>
+        <div class="csoc">
+          <a href="https://github.com/krihiga" target="_blank" rel="noopener" aria-label="GitHub" class="csb"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/onlykrithiga" target="_blank" rel="noopener" aria-label="LinkedIn" class="csb"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.busyorder.co.in/" target="_blank" rel="noopener" aria-label="Website" class="csb"><i class="fa-solid fa-globe"></i></a>
+        </div>
+        <a href="https://wa.me/918610597402" target="_blank" rel="noopener" class="btn wacta">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <div class="cfw rr">
+        <form class="cf" id="cf" novalidate>
+          <div class="frow">
+            <div class="fg"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="John Doe" required /><span class="ferr" id="ne"></span></div>
+            <div class="fg"><label for="fe">Email Address *</label><input type="email" id="fe" name="email" placeholder="john@example.com" required /><span class="ferr" id="ee"></span></div>
+          </div>
+          <div class="fg">
+            <label for="fs">Service Interested In</label>
+            <select id="fs" name="service">
+              <option value="">Select a service…</option>
+              <option>Web Development</option><option>Android App Development</option>
+              <option>Custom Design</option><option>College Project</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label for="fm">Your Message *</label><textarea id="fm" name="message" rows="5" placeholder="Tell me about your project…" required></textarea><span class="ferr" id="me2"></span></div>
+          <button type="submit" class="btn btnl fsub" id="fsub">Send Message <span class="arr">→</span></button>
+          <div class="fok" id="fok"><i class="fa-solid fa-circle-check"></i> Message sent! I'll reply within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="ftop">
+      <div>
+        <a href="#home" class="logo"><span class="lb">{</span><span>Busy<span class="la">Order</span></span><span class="lb">}</span></a>
+        <p class="ftagl">Real engineering for real businesses.</p>
+        <div class="fsoc">
+          <a href="https://github.com/krihiga" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/onlykrithiga" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.busyorder.co.in/" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+        </div>
+      </div>
+      <div class="flc"><h4>Navigation</h4><ul>
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+      </ul></div>
+      <div class="flc"><h4>Services</h4><ul>
+        <li><a href="#services">Web Development</a></li><li><a href="#services">Android App Dev</a></li>
+        <li><a href="#services">Custom Design</a></li><li><a href="#services">College Projects</a></li>
+      </ul></div>
+      <div class="flc"><h4>Contact</h4><ul>
+        <li><a href="mailto:onlyrithi@gmail.com">onlyrithi@gmail.com</a></li>
+        <li><a href="https://wa.me/918610597402" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.busyorder.co.in/" target="_blank" rel="noopener">busyorder.co.in</a></li>
+        <li><a href="https://www.linkedin.com/in/onlykrithiga" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2024 <strong>Krithiga R</strong> — Busy Order. All rights reserved.</p>
+      <p>Built with ❤️ in Trichy, Tamil Nadu</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+'use strict';
+/* CURSOR */
+(()=>{const d=document.getElementById('cdot'),r=document.getElementById('cring');if(!d||!r)return;let mx=-100,my=-100,ox=-100,oy=-100;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});(function L(){d.style.left=mx+'px';d.style.top=my+'px';ox+=(mx-ox)*.18;oy+=(my-oy)*.18;r.style.left=ox+'px';r.style.top=oy+'px';requestAnimationFrame(L)})()})();
+
+/* NAVBAR */
+(()=>{const nav=document.getElementById('navbar'),hb=document.getElementById('hb'),mob=document.getElementById('mob'),mc=document.getElementById('mc'),btt=document.getElementById('btt');window.addEventListener('scroll',()=>{nav.classList.toggle('sc',scrollY>40);btt.classList.toggle('show',scrollY>400)},{passive:true});const open=()=>{mob.classList.add('open');document.body.style.overflow='hidden'};const close=()=>{mob.classList.remove('open');document.body.style.overflow=''};hb.addEventListener('click',open);mc.addEventListener('click',close);document.querySelectorAll('[data-cl]').forEach(l=>l.addEventListener('click',close));mob.addEventListener('click',e=>{if(e.target===mob)close()});btt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}))})();
+
+/* ACTIVE NAV */
+(()=>{const ss=[...document.querySelectorAll('section[id]')],nl=[...document.querySelectorAll('.nl')];if(!ss.length)return;new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){nl.forEach(l=>l.classList.remove('ac'));const a=nl.find(l=>l.dataset.s===e.target.id);if(a)a.classList.add('ac')}})},{threshold:.45}).observe&&ss.forEach(s=>new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){nl.forEach(l=>l.classList.remove('ac'));const a=nl.find(l=>l.dataset.s===e.target.id);if(a)a.classList.add('ac')}})},{threshold:.45}).observe(s))})();
+
+/* REVEAL */
+(()=>{const els=document.querySelectorAll('.rv,.rl,.rr');if(!els.length)return;const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('iv');o.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});els.forEach(el=>o.observe(el))})();
+
+/* COUNTERS */
+(()=>{const els=document.querySelectorAll('.snum');if(!els.length)return;const o=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.t,dur=1800,s=performance.now();(function step(n){const p=Math.min((n-s)/dur,1),v=1-Math.pow(1-p,3);el.textContent=Math.floor(v*t);if(p<1)requestAnimationFrame(step);else el.textContent=t})(s);o.unobserve(el)})},{threshold:.5});els.forEach(el=>o.observe(el))})();
+
+/* FILTER */
+(()=>{const bs=document.querySelectorAll('.fb'),cs=document.querySelectorAll('.pc');bs.forEach(b=>{b.addEventListener('click',()=>{const f=b.dataset.f;bs.forEach(x=>x.classList.remove('ac'));b.classList.add('ac');cs.forEach(c=>{const show=f==='all'||c.dataset.cat===f;c.classList.toggle('hidden',!show);if(show)setTimeout(()=>c.classList.add('iv'),10)})})})})();
+
+/* TESTIMONIALS */
+(()=>{const track=document.getElementById('tst'),dots=[...document.querySelectorAll('.td')];if(!track)return;const cards=[...track.querySelectorAll('.tc')];let cur=0,timer;function cw(){return cards[0]?cards[0].offsetWidth+24:0}function go(i){const max=Math.max(0,cards.length-Math.floor(track.parentElement.offsetWidth/cw()));cur=Math.max(0,Math.min(i,max));track.style.transform=`translateX(-${cur*cw()}px)`;dots.forEach((d,j)=>d.classList.toggle('ac',j===cur))}dots.forEach(d=>d.addEventListener('click',()=>{go(+d.dataset.i);reset()}));let sx=0,drag=false;track.addEventListener('mousedown',e=>{drag=true;sx=e.clientX});document.addEventListener('mouseup',e=>{if(!drag)return;drag=false;const dd=e.clientX-sx;if(Math.abs(dd)>60){go(dd<0?cur+1:cur-1);reset()}});track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});track.addEventListener('touchend',e=>{const dd=e.changedTouches[0].clientX-sx;if(Math.abs(dd)>60){go(dd<0?cur+1:cur-1);reset()}});function reset(){clearInterval(timer);timer=setInterval(()=>go((cur+1)%cards.length),4000)}reset()})();
+
+/* FORM */
+(()=>{const form=document.getElementById('cf');if(!form)return;const fn=document.getElementById('fn'),fe=document.getElementById('fe'),fm=document.getElementById('fm'),ne=document.getElementById('ne'),ee=document.getElementById('ee'),me=document.getElementById('me2'),sub=document.getElementById('fsub'),ok=document.getElementById('fok');function err(el,sp,msg){el.style.borderColor=msg?'#f87171':'';sp.textContent=msg}function valid(){let v=true;if(!fn.value.trim()){err(fn,ne,'Name is required.');v=false}else err(fn,ne,'');const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!fe.value.trim()){err(fe,ee,'Email is required.');v=false}else if(!re.test(fe.value)){err(fe,ee,'Valid email required.');v=false}else err(fe,ee,'');if(!fm.value.trim()||fm.value.trim().length<20){err(fm,me,'Min 20 characters.');v=false}else err(fm,me,'');return v}[fn,fe,fm].forEach(el=>el.addEventListener('input',valid));form.addEventListener('submit',async e=>{e.preventDefault();if(!valid())return;sub.disabled=true;sub.textContent='Sending…';await new Promise(r=>setTimeout(r,1400));form.reset();sub.disabled=false;sub.innerHTML='Send Message <span class="arr">→</span>';ok.classList.add('show');setTimeout(()=>ok.classList.remove('show'),5000)})})();
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h==='#')return;const t=document.querySelector(h);if(!t)return;e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:'smooth'})})});
+
+/* RIPPLE */
+(()=>{const s=document.createElement('style');s.textContent='@keyframes rpl{to{transform:translate(-50%,-50%) scale(40);opacity:0}}';document.head.appendChild(s);document.querySelectorAll('.btn,.pb').forEach(btn=>{btn.addEventListener('click',e=>{const r=btn.getBoundingClientRect(),rip=document.createElement('span');rip.style.cssText=`position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);transform:translate(-50%,-50%) scale(0);animation:rpl .6s ease-out forwards;left:${e.clientX-r.left}px;top:${e.clientY-r.top}px;pointer-events:none;z-index:10`;if(getComputedStyle(btn).position==='static')btn.style.position='relative';btn.appendChild(rip);setTimeout(()=>rip.remove(),650)})})})();
+
+/* PARALLAX */
+(()=>{const orbs=document.querySelectorAll('.orb'),sp=[.02,.035,.025];window.addEventListener('mousemove',e=>{const cx=innerWidth/2,cy=innerHeight/2;orbs.forEach((o,i)=>{const s=sp[i]||.02;o.style.transform=`translate(${(e.clientX-cx)*s}px,${(e.clientY-cy)*s}px)`})})})();
+
+/* TILT */
+(()=>{if(window.matchMedia('(hover:none)').matches)return;document.querySelectorAll('.svc,.tc').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-6px)`});c.addEventListener('mouseleave',()=>{c.style.transform=''})})})();
+
+/* TYPEWRITER */
+(()=>{const el=document.getElementById('tw');if(!el)return;const ph=['actually work','scale with you','get you results','stand the test'];let pi=0,ci=0,del=false;function tick(){const p=ph[pi];if(!del){el.textContent=p.slice(0,++ci);if(ci===p.length){del=true;setTimeout(tick,2000);return}}else{el.textContent=p.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%ph.length}}setTimeout(tick,del?50:80)}setTimeout(tick,2000)})();
+
+console.log('%c{ BusyOrder }%c\nKrithiga R 🚀','color:#00d4ff;font-family:monospace;font-weight:bold','color:#8b949e;font-family:monospace');
+</script>
+</body>
+</html>
